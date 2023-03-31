@@ -1,0 +1,63 @@
+.gameplay-container {
+    border: 8px solid white;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+}
+
+.h-100-percent {
+    height: 100%;
+}
+
+.w-100-percent {
+    width: 100%;
+}
+
+.h-100-vh {
+    height: 100vh;
+}
+
+.h-gr-1-2-vh {
+    height: 85.41019662496846vh;
+}
+
+.h-gr-3-vh {
+    height: 14.58980337503154vh;
+}
+
+.h-gr-1-vh {
+    height: 61.80339887498949vh;
+}
+
+.h-gr-2-3-vh {
+    height: 38.19660112501051vh;
+}
+
+.w-gr-1-2 {
+    width: 85.41019662496846%;
+}
+
+.w3-container {
+    height: 100%;
+    position: relative;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.c-pointer {
+    cursor: pointer;
+}
+
+.v-tooltip__content {
+    opacity: 1 !important;
+}
+
+.btn-border {
+    border: 2px solid white;
+}
