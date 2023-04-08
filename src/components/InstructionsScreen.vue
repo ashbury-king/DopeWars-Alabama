@@ -17,33 +17,49 @@
             <div>Icons to Note</div>
             <v-row>
                 <v-col>
-                    <v-icon color="white">
-                        mdi-information
-                    </v-icon>
+                    <div class="w3-container">
+                        <div class="vertical-center">
+                            <v-icon color="white">
+                                mdi-information
+                            </v-icon>
+                        </div>
+                    </div>
                 </v-col>
                 <v-col>No price changes in the city</v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-icon color="primary">
-                        mdi-information
-                    </v-icon>
+                    <div class="w3-container">
+                        <div class="vertical-center">
+                            <v-icon color="primary">
+                                mdi-information
+                            </v-icon>
+                        </div>
+                    </div>
                 </v-col>
                 <v-col>A drug in the city has changed their prices</v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-icon color="white">
-                        mdi-star
-                    </v-icon>
+                    <div class="w3-container">
+                        <div class="vertical-center">
+                            <v-icon color="white">
+                                mdi-star
+                            </v-icon>
+                        </div>
+                    </div>
                 </v-col>
                 <v-col>A profit will be made if drug is sold</v-col>
             </v-row>
             <v-row>
                 <v-col>
-                    <v-icon color="white">
-                        mdi-close
-                    </v-icon>
+                    <div class="w3-container">
+                        <div class="vertical-center">
+                            <v-icon color="white">
+                                mdi-close
+                            </v-icon>
+                        </div>
+                    </div>
                 </v-col>
                 <v-col>A loss will be made if drug is sold</v-col>
             </v-row>
@@ -93,8 +109,8 @@ export default Vue.extend({
         },
         touch: function () {
             this.$store.state.screen = 'difficulty';
-        }
-    }
+        },
+    },
 });
 </script>
 
