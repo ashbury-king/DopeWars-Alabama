@@ -8,10 +8,10 @@
             <v-row>
                 <v-col v-for="(location, i) in Object.values(locationsEnum)" :key="`${i}-${location}`">
                     <v-container>
-                        <v-tooltip bottom width="100%">
+                        <v-tooltip bottom width="100%" v-model="tooltipToggleArray[i]">
                             <template v-slot:activator="{ on, attrs }">
                                 <v-icon :color="(getActionsInLocation(location).length > 0) ? 'primary' : 'white'"
-                                    class="c-pointer" v-on="on" v-bind="attrs">
+                                    class="c-pointer" v-on="on" v-bind="attrs" @click="toggleCityTooltip(i)">
                                     mdi-information
                                 </v-icon>
                             </template>
@@ -55,13 +55,18 @@ import PricesAtLocation from '@/classes/PricesAtLocation';
 import RandomInt from '@/utils/RandomInt';
 import { areCopsChasing } from '@/events/CopsBustDeal';
 
+const tooltipToggleArray: boolean[] = [];
+
 export default Vue.extend({
     name: 'LocationsScreen',
     mounted: function (): void {
         // this.scrollToElement("locations-screen-first-element");
+        this.tooltipToggleArray.length = Object.keys(LocationsEnum).length;
+        this.tooltipToggleArray.fill(false);
     },
     data: () => ({
         locationsEnum: LocationsEnum,
+        tooltipToggleArray,
     }),
     computed: {
         player: function (): Player {
@@ -77,6 +82,15 @@ export default Vue.extend({
         }
     },
     methods: {
+        toggleCityTooltip: function (index: number): void {
+            const copyOfArray: boolean[] = [];
+            this.tooltipToggleArray.forEach((status: boolean) => {
+                copyOfArray.push(status);
+            });
+            if (copyOfArray[index] === false) copyOfArray[index] = true;
+            else copyOfArray[index] = false;
+            this.tooltipToggleArray = copyOfArray;
+        },
         cancel: function (): void {
             this.$store.state.screen = 'main';
         },

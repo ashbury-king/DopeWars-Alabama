@@ -3,10 +3,10 @@
     <v-container ref="main-screen-first-element" class="px-0">
       <div>
         <v-container class="text-h5">
-          <div><v-tooltip bottom width="100%">
+          <div><v-tooltip bottom width="100%" v-model="showTooltip">
               <template v-slot:activator="{ on, attrs }">
                 <v-icon :color="(getActionsInLocation(currentCity).length > 0) ? 'primary' : 'white'" class="c-pointer"
-                  v-on="on" v-bind="attrs">
+                  v-on="on" v-bind="attrs" @click="showTooltip = !showTooltip">
                   mdi-information
                 </v-icon>
               </template>
@@ -85,7 +85,7 @@
     <v-container class="px-0">
       <v-container class="text-h5">Assets</v-container>
       <v-row>
-      <v-col>
+        <v-col>
           <div>Health</div>
           <div>{{ health }} / 20</div>
         </v-col>
@@ -170,13 +170,14 @@ export default Vue.extend({
   data: () => ({
     dialog: false,
     gunPrice: RandomInt(662, 1853),
+    showTooltip: false,
   }),
   computed: {
     player: function (): Player {
       const player: Player = this.$store.state.player;
       return player;
     },
-    health: function(): number{
+    health: function (): number {
       return this.player.health;
     },
     daysRemaining: function (): number {
