@@ -85,6 +85,10 @@
     <v-container class="px-0">
       <v-container class="text-h5">Assets</v-container>
       <v-row>
+      <v-col>
+          <div>Health</div>
+          <div>{{ health }} / 20</div>
+        </v-col>
         <v-col>
           <div>Days Remaining</div>
           <div>{{ daysRemaining }}</div>
@@ -171,6 +175,9 @@ export default Vue.extend({
     player: function (): Player {
       const player: Player = this.$store.state.player;
       return player;
+    },
+    health: function(): number{
+      return this.player.health;
     },
     daysRemaining: function (): number {
       return this.player.daysRemaining;
