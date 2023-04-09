@@ -1,6 +1,6 @@
 <template>
     <div class="h-100-percent text-center">
-        <div class="text-h5">Loan Shark</div>
+        <div class="text-h5">Bank</div>
         <v-container>
             <v-row>
                 <v-col>Cash:</v-col>
@@ -43,10 +43,7 @@
             </v-row>
             <v-row>
                 <v-col>
-                    <v-btn color="primary" width="100%" :disabled="
-                        (Number(withdrawAmount) > 0 && Number(withdrawAmount) <= cash) === false ||
-                        Number(withdrawAmount) > bankBalance
-                    " @click="withdraw">
+                    <v-btn color="primary" width="100%" :disabled="Number(withdrawAmount) > bankBalance" @click="withdraw">
                         Withdraw
                     </v-btn>
                 </v-col>
