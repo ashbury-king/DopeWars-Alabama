@@ -3,7 +3,28 @@
         <v-container>
             <v-row>
                 <v-col v-for="(drug, i) in drugList" :key="`${drug}-${i}`">
-                    <div>{{ getDrugAmount(drug) }}</div>
+                    <div>
+                        <span v-if="player.getCostBasis(drug) > 0 && player.getCostBasis(drug) < getPriceOfDrug(drug)">
+                            <v-icon color="white">
+                                mdi-star
+                            </v-icon>
+                        </span>
+                        <span v-else-if="player.getCostBasis(drug) > 0 && player.getCostBasis(drug) > getPriceOfDrug(drug)">
+                            <v-icon color="white">
+                                mdi-close
+                            </v-icon>
+                        </span>
+                        <span v-else>
+                            <v-icon color="white">
+                                mdi-circle-small
+                            </v-icon>
+                        </span>
+                    </div>
+                    <div>
+                        <span>Price: ${{ getPriceOfDrug(drug) }}</span>
+
+                    </div>
+                    <div>Amount: {{ getDrugAmount(drug) }}</div>
                     <div>
                         <v-btn color="primary" width="100%" @click="drugClick(drug)" :disabled="(
                             drug === selectedDrug ||
@@ -17,7 +38,7 @@
         </v-container>
         <hr />
         <v-container>
-            <div>Cash : {{ toUsCurrency(playerMoney) }}</div>
+            <div>Cash : {{ ToUsCurrency(playerMoney) }}</div>
             <div>Space in duffel : {{ spaceInDuffelBag }} / {{ maxDuffelBagCapacity }}</div>
             <div>Number of units to sell: {{ numberOfUnits }}</div>
             <div>
@@ -32,6 +53,9 @@
         <hr />
         <v-container>
             <v-row>
+                <v-col>
+                    <CostBasis />
+                </v-col>
                 <v-col><v-btn color="primary" width="100%" :disabled="selectedDrug === '' || numberOfUnits === 0"
                         @click="sell">Sell</v-btn></v-col>
                 <v-col><v-btn color="primary" width="100%" @click="cancel"
@@ -63,9 +87,13 @@ import Prices from '@/classes/Prices';
 import ToUsCurrency from '@/utils/ToUsCurrency';
 import { areYouBeingMugged, resultOfMugging } from '@/events/Mugged';
 import RandomInt from '@/utils/RandomInt';
+import CostBasis from '@/components/subcomponents/CostBasis.vue';
 
 export default Vue.extend({
     name: 'SellScreen',
+    components: {
+        CostBasis,
+    },
     data: () => ({
         drugList: DrugList,
         selectedDrug: '',
@@ -130,6 +158,9 @@ export default Vue.extend({
         },
         sell: function (): void {
             this.player.sell(this.selectedDrug, this.numberOfUnits, this.getPriceOfDrug(this.selectedDrug));
+            for (let i = 0; i < this.numberOfUnits; i += 1) {
+                this.player.removeDrugFromCostBasis(this.selectedDrug);
+            }
             this.selectedDrug = '';
             this.numberOfUnits = 0;
             if (areYouBeingMugged(RandomInt(0, 8))) {
@@ -139,9 +170,7 @@ export default Vue.extend({
                 this.dialog = true;
             }
         },
-        toUsCurrency: function (dollars: number): string {
-            return ToUsCurrency(dollars);
-        },
+        ToUsCurrency,
     },
 });
 </script>

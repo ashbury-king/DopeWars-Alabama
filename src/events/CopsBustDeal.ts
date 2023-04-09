@@ -31,6 +31,9 @@ const gotAway = (
     if (potentialDrugLossRand > 0) {
         const newDrugAmount: number = player.getDrugAmount(randomDrug) - potentialDrugLossRand;
         player.setDrugAmount(randomDrug, newDrugAmount);
+        for (let i = 0; i < potentialDrugLossRand; i += 1) {
+            player.removeDrugFromCostBasis(randomDrug);
+        }
         return `You got away. But you dropped ${potentialDrugLossRand} of ${randomDrug} while running!`;
     }
     else {
