@@ -57,26 +57,18 @@ export const runFromCops = (
     potentialDrugLossRand: number,
     rand6: number, // shot
 ): IRunFromCops => {
-    if (1 === rand3) {
+    if ([2, 4].includes(rand6)) {
+        player.health -= 1;
         return {
-            result: gotAway(player, randomDrug, potentialDrugLossRand),
-            loop: false,
+            result: 'You got hit by one of their shots and lost some health!',
+            loop: true,
         }
     }
     else {
-        if ([2, 4].includes(rand6)) {
-            player.health -= 1;
-            return {
-                result: 'You got hit by one of their shots and lost some health!',
-                loop: true,
-            }
-        }
-        else {
-            return {
-                result: gotAway(player, randomDrug, potentialDrugLossRand),
-                loop: false,
-            };
-        }
+        return {
+            result: gotAway(player, randomDrug, potentialDrugLossRand),
+            loop: false,
+        };
     }
 };
 
@@ -97,7 +89,7 @@ export const fightAtCops = (
         const newNumberOfCops = numberOfCops - 1;
         if (newNumberOfCops === 0) {
             return {
-                result: gotAway(player, randomDrug, potentialDrugLossRand),
+                result: gotAway(player, randomDrug, 0),
                 loop: false,
                 copsRemaining: newNumberOfCops,
             }

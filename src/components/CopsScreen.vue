@@ -4,7 +4,16 @@
         <hr />
         <v-container>
             <v-row>
-                <v-col class="text-subtitle-1">{{ numberOfCops }} cops caught you with the work!</v-col>
+                <v-col class="text-subtitle-1">{{ numberOfCops }} cop<span v-if="numberOfCops > 1">s</span> caught you with
+                    the work!</v-col>
+            </v-row>
+            <hr />
+            <div>If you try to run, there's a 67% chance that you get away but you may drop some drugs.</div>
+            <div>If you try to run, there's a 33% chance that you get hit with a bullet and lose some a health point.</div>
+            <div>If you try to fight, there's a 17% chance that you hit a cop.</div>
+            <hr />
+            <v-row>
+                <v-col>Health: {{ health }} / 20</v-col>
             </v-row>
             <v-row>
                 <v-col>
@@ -59,6 +68,9 @@ export default Vue.extend({
         numberOfGuns: function (): number {
             return this.player.guns;
         },
+        health: function (): number {
+            return this.player.health;
+        }
     },
     methods: {
         fight: function (): void {
@@ -74,7 +86,7 @@ export default Vue.extend({
                     this.$store.state.mainMenuMessages.push(responseObject.result);
                     this.$store.state.screen = 'main';
                 }
-                else if(player.health <= 0){
+                else if (player.health <= 0) {
                     this.$store.state.screen = 'game-over';
                 }
                 else {

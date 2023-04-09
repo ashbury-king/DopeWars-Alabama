@@ -76,7 +76,7 @@ describe('the CopsBustDeal test suite', () => {
         const randomDrug = DrugsList[5];
         const potentialDrugLossRand = 1;
         const responseObject: IFightAtCops = fightAtCops(player, rand6, numberOfCops, randomDrug, potentialDrugLossRand);
-        expect(responseObject.result).toBe(`You got away. But you dropped ${potentialDrugLossRand} of ${randomDrug} while running!`);
+        expect(responseObject.result).toBe(`You got away!`);
         expect(responseObject.loop).toBe(false);
         expect(responseObject.copsRemaining).toBe(numberOfCops - 1);
     });
