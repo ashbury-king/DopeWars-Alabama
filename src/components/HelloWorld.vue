@@ -10,7 +10,6 @@
       <BuyScreen v-else-if="$store.state.screen === 'buy'" />
       <SellScreen v-else-if="$store.state.screen === 'sell'" />
       <LoanScreen v-else-if="$store.state.screen === 'loan'" />
-      <DuffelBagScreen v-else-if="$store.state.screen === 'duffel'" />
       <CopsScreen v-else-if="$store.state.screen === 'cops'" />
       <BankScreen v-else-if="$store.state.screen === 'bank'" />
     </v-container>
@@ -28,7 +27,6 @@ import GameOverScreen from '@/components/GameOverScreen.vue'
 import BuyScreen from '@/components/BuyScreen.vue'
 import SellScreen from '@/components/SellScreen.vue'
 import LoanScreen from '@/components/LoanScreen.vue'
-import DuffelBagScreen from '@/components/DuffelBagScreen.vue'
 import CopsScreen from '@/components/CopsScreen.vue'
 import BankScreen from '@/components/BankScreen.vue'
 
@@ -44,7 +42,6 @@ export default Vue.extend({
     BuyScreen,
     SellScreen,
     LoanScreen,
-    DuffelBagScreen,
     CopsScreen,
     BankScreen,
   },

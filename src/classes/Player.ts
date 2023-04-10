@@ -31,7 +31,7 @@ export default class Player {
         this.guns = 0;
         this.daysRemaining = 30;
         this.health = 20;
-        this.maxDuffelBagCapacity = 100;
+        this.maxDuffelBagCapacity = 25;
         this.cocaine = 0;
         this.heroin = 0;
         this.acid = 0;

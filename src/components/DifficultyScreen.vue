@@ -29,7 +29,7 @@ export default Vue.extend({
             const player: Player = this.$store.state.player;
             player.shark.balance = balance;
             this.$store.state.player = player;
-            this.$store.state.screen = 'duffel';
+            this.$store.state.screen = 'main';
         }
     },
 });
