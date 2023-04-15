@@ -1,18 +1,24 @@
 <template>
   <div class="h-100-vh">
-    <v-container class="gameplay-container h-100-percent overflow-auto">
-      <TitleScreen v-if="$store.state.screen === 'title'" />
-      <InstructionsScreen v-else-if="$store.state.screen === 'instructions'" />
-      <DifficultyScreen v-else-if="$store.state.screen === 'difficulty'" />
-      <MainScreen v-else-if="$store.state.screen === 'main'" />
-      <LocationsScreen v-else-if="$store.state.screen === 'locations'" />
-      <GameOverScreen v-else-if="$store.state.screen === 'game-over'" />
-      <BuyScreen v-else-if="$store.state.screen === 'buy'" />
-      <SellScreen v-else-if="$store.state.screen === 'sell'" />
-      <LoanScreen v-else-if="$store.state.screen === 'loan'" />
-      <CopsScreen v-else-if="$store.state.screen === 'cops'" />
-      <BankScreen v-else-if="$store.state.screen === 'bank'" />
-    </v-container>
+    <div class="w3-container">
+      <div class="vertical-center">
+        <div class="h-gr-1-2-vh">
+          <v-container class="gameplay-container h-100-percent overflow-auto">
+            <TitleScreen v-if="$store.state.screen === 'title'" />
+            <InstructionsScreen v-else-if="$store.state.screen === 'instructions'" />
+            <DifficultyScreen v-else-if="$store.state.screen === 'difficulty'" />
+            <MainScreen v-else-if="$store.state.screen === 'main'" />
+            <LocationsScreen v-else-if="$store.state.screen === 'locations'" />
+            <GameOverScreen v-else-if="$store.state.screen === 'game-over'" />
+            <BuyScreen v-else-if="$store.state.screen === 'buy'" />
+            <SellScreen v-else-if="$store.state.screen === 'sell'" />
+            <LoanScreen v-else-if="$store.state.screen === 'loan'" />
+            <CopsScreen v-else-if="$store.state.screen === 'cops'" />
+            <BankScreen v-else-if="$store.state.screen === 'bank'" />
+          </v-container>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
