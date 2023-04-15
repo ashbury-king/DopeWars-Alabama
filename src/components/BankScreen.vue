@@ -43,7 +43,7 @@
             </v-row>
             <v-row>
                 <v-col>
-                    <v-btn color="primary" width="100%" :disabled="Number(withdrawAmount) > bankBalance" @click="withdraw">
+                    <v-btn color="primary" width="100%" :disabled="Number(withdrawAmount) > bankBalance || bankBalance <= 0" @click="withdraw">
                         Withdraw
                     </v-btn>
                 </v-col>
