@@ -87,15 +87,15 @@
       <v-row>
         <v-col>
           <div>Health</div>
-          <div>{{ health }} / 20</div>
+          <div>{{ health }}</div>
         </v-col>
         <v-col>
-          <div>Days Remaining</div>
-          <div>{{ daysRemaining }}</div>
+          <div>Day</div>
+          <div>{{ daysRemaining - 29 }}</div>
         </v-col>
         <v-col>
-          <div>Space in Duffel</div>
-          <div>{{ spaceInDuffelBag }} / {{ maxDuffelBagCapacity }}</div>
+          <div>Space</div>
+          <div>{{ spaceInDuffelBag }}</div>
         </v-col>
         <v-col>
           <div>Guns</div>

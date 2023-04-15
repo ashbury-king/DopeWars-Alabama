@@ -19,7 +19,7 @@
         <hr />
         <v-container>
             <div>Cash : {{ toUsCurrency(playerMoney) }}</div>
-            <div>Space in duffel : {{ spaceInDuffelBag }} / {{ maxDuffelBagCapacity }}</div>
+            <div>Duffel Space : {{ spaceInDuffelBag }} / {{ maxDuffelBagCapacity }}</div>
             <div>Number of units to buy: {{ numberOfUnits }}</div>
             <div>
                 <v-btn color="primary" @click="decreaseNumberOfUnits"
