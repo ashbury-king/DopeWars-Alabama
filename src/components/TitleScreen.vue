@@ -4,7 +4,8 @@
             <div class="vertical-center">
                 <v-container>
                     <v-row>
-                        <v-col v-for="(value, i) in icons" :key="`${i}-${value}`">
+                        <v-col cols="3" xs="1" sm="1" md="1" lg="1" xl="1" xxl="1" v-for="(value, i) in icons"
+                            :key="`${i}-${value}`">
                             <v-icon>
                                 {{ value }}
                             </v-icon>
@@ -29,12 +30,14 @@ export default Vue.extend({
     data: () => ({
         icons: [
             'mdi-domino-mask',
+            'mdi-arm-flex',
             'mdi-pistol',
             'mdi-police-badge',
             'mdi-face-woman-shimmer',
-            'mdi-truck-fast',
+            'mdi-bank',
             'mdi-needle',
             'mdi-fire',
+            'mdi-truck-fast',
             'mdi-home-city',
             'mdi-airplane',
             'mdi-currency-usd',
