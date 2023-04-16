@@ -2,7 +2,7 @@
   <div class="text-center h-100-perecent">
     <v-container ref="main-screen-first-element" class="px-0">
       <div>
-        <v-container class="text-h5">
+        <v-container class="text-h5 py-0">
           <div><v-tooltip bottom width="100%" v-model="showTooltip">
               <template v-slot:activator="{ on, attrs }">
                 <v-icon :color="(getActionsInLocation(currentCity).length > 0) ? 'primary' : 'white'" class="c-pointer"
@@ -53,7 +53,7 @@
     </v-container>
     <hr />
     <v-container class="px-0">
-      <v-container class="text-h5">Items in Duffel Bag</v-container>
+      <v-container class="text-h5 py-0">Items in Duffel Bag</v-container>
       <v-row>
         <v-col>
           <div>Heroin</div>
@@ -83,7 +83,7 @@
     </v-container>
     <hr />
     <v-container class="px-0">
-      <v-container class="text-h5">Assets</v-container>
+      <v-container class="text-h5 py-0">Assets</v-container>
       <v-row>
         <v-col>
           <div>Health</div>
@@ -114,26 +114,28 @@
     <hr />
     <v-container class="px-0">
       <v-row>
-        <v-col>
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2">
           <v-btn color="primary" width="100%" @click="buyGun" :disabled="playerMoney < gunPrice || numberOfGuns > 0">
             Buy Gun — {{ toUsCurrency(gunPrice) }}
           </v-btn>
         </v-col>
-        <v-col>
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2">
           <v-btn color="primary" width="100%" @click="goToScreen('loan')">
             Visit Loan Shark
           </v-btn>
         </v-col>
-        <v-col>
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2">
           <v-btn color="primary" width="100%" @click="goToScreen('bank')">
             Visit Bank
           </v-btn>
         </v-col>
-        <v-col><v-btn color="primary" width="100%" @click="goToScreen('buy')" :disabled="spaceInDuffelBag === 0">Buy
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2"><v-btn color="primary" width="100%"
+            @click="goToScreen('buy')" :disabled="spaceInDuffelBag === 0">Buy
             Drugs</v-btn></v-col>
-        <v-col><v-btn color="primary" width="100%" @click="goToScreen('sell')"
-            :disabled="spaceInDuffelBag === maxDuffelBagCapacity">Sell Drugs</v-btn></v-col>
-        <v-col><v-btn color="primary" width="100%" @click="goToScreen('locations')">Change Location</v-btn></v-col>
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2"><v-btn color="primary" width="100%"
+            @click="goToScreen('sell')" :disabled="spaceInDuffelBag === maxDuffelBagCapacity">Sell Drugs</v-btn></v-col>
+        <v-col cols="12" xs="12" sm="4" md="4" lg="2" xl="2" xxl="2"><v-btn color="primary" width="100%"
+            @click="goToScreen('locations')">Change Location</v-btn></v-col>
       </v-row>
     </v-container>
     <v-dialog v-model="dialog" width="auto">

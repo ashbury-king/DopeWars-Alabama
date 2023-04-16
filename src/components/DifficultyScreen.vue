@@ -8,9 +8,12 @@
                 </v-container>
                 <v-container>
                     <v-row>
-                        <v-col><v-btn color="primary" width="100%" @click="setLoanBalance(4036)">$4036</v-btn></v-col>
-                        <v-col><v-btn color="primary" width="100%" @click="setLoanBalance(4770)">$4770</v-btn></v-col>
-                        <v-col><v-btn color="primary" width="100%" @click="setLoanBalance(5871)">$5871</v-btn></v-col>
+                        <v-col cols="12" xs="12" sm="4" md="4" lg="4" xl="4" xxl="4"><v-btn color="primary" width="100%"
+                                @click="setLoanBalance(4036)">$4036</v-btn></v-col>
+                        <v-col cols="12" xs="12" sm="4" md="4" lg="4" xl="4" xxl="4"><v-btn color="primary" width="100%"
+                                @click="setLoanBalance(4770)">$4770</v-btn></v-col>
+                        <v-col cols="12" xs="12" sm="4" md="4" lg="4" xl="4" xxl="4"><v-btn color="primary" width="100%"
+                                @click="setLoanBalance(5871)">$5871</v-btn></v-col>
                     </v-row>
                 </v-container>
             </div>

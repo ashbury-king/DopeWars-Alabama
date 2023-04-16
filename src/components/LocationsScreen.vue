@@ -6,7 +6,8 @@
         <hr />
         <v-container>
             <v-row>
-                <v-col v-for="(location, i) in Object.values(locationsEnum)" :key="`${i}-${location}`">
+                <v-col v-for="(location, i) in Object.values(locationsEnum)" :key="`${i}-${location}`" cols="12" xs="12"
+                    sm="4" md="4" lg="4" xl="4" xxl="4">
                     <v-container>
                         <v-tooltip bottom width="100%" v-model="tooltipToggleArray[i]">
                             <template v-slot:activator="{ on, attrs }">
