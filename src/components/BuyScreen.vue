@@ -2,7 +2,8 @@
     <div class="h-100-percent text-center">
         <v-container>
             <v-row>
-                <v-col v-for="(drug, i) in drugList" :key="`${drug}-${i}`">
+                <v-col v-for="(drug, i) in drugList" :key="`${drug}-${i}`" cols="12" xs="12" sm="4" md="2" lg="2" xl="2"
+                    xxl="2">
                     <div>${{ getPriceOfDrug(drug) }}</div>
                     <div>
                         <v-btn color="primary" width="100%" @click="drugClick(drug)" :disabled="(
@@ -134,5 +135,4 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
