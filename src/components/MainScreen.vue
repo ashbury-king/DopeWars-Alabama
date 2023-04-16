@@ -91,7 +91,7 @@
         </v-col>
         <v-col>
           <div>Day</div>
-          <div>{{ daysRemaining - 29 }}</div>
+          <div>{{ 30 - daysRemaining + 1 }}</div>
         </v-col>
         <v-col>
           <div>Space</div>
