@@ -24,27 +24,27 @@
           <div>{{ currentCity }}, Alabama's Prices</div>
         </v-container>
         <v-row>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Heroin</div>
             <div>${{ heroinPrice }}</div>
           </v-col>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Cocaine</div>
             <div>${{ cocainePrice }}</div>
           </v-col>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Ecstasy</div>
             <div>${{ ecstasyPrice }}</div>
           </v-col>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Acid</div>
             <div>${{ acidPrice }}</div>
           </v-col>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Weed</div>
             <div>${{ weedPrice }}</div>
           </v-col>
-          <v-col>
+          <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
             <div>Xanax</div>
             <div>${{ xanaxPrice }}</div>
           </v-col>
@@ -55,27 +55,27 @@
     <v-container class="px-0">
       <v-container class="text-h5 py-0">Items in Duffel Bag</v-container>
       <v-row>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Heroin</div>
           <div>{{ heroinAmount }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Cocaine</div>
           <div>{{ cocaineAmount }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Ecstasy</div>
           <div>{{ ecstasyAmount }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Acid</div>
           <div>{{ acidAmount }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Weed</div>
           <div>{{ weedAmount }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Xanax</div>
           <div>{{ xanaxAmount }}</div>
         </v-col>
@@ -85,27 +85,27 @@
     <v-container class="px-0">
       <v-container class="text-h5 py-0">Assets</v-container>
       <v-row>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Health</div>
           <div>{{ health }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Day</div>
           <div>{{ 30 - daysRemaining + 1 }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Space</div>
           <div>{{ spaceInDuffelBag }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Guns</div>
           <div>{{ numberOfGuns }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Debt</div>
           <div>${{ debt }}</div>
         </v-col>
-        <v-col>
+        <v-col cols="4" xs="4" sm="2" md="2" lg="2" xl="2" xxl="2">
           <div>Cash</div>
           <div>${{ playerMoney }}</div>
         </v-col>
