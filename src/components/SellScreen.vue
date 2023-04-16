@@ -2,7 +2,7 @@
     <div class="h-100-percent text-center">
         <v-container>
             <v-row>
-                <v-col v-for="(drug, i) in drugList" :key="`${drug}-${i}`" cols="12" xs="12" sm="4" md="2" lg="2" xl="2"
+                <v-col v-for="(drug, i) in drugList" :key="`${drug}-${i}`" cols="6" xs="6" sm="4" md="2" lg="2" xl="2"
                     xxl="2">
                     <div>
                         <span v-if="player.getCostBasis(drug) > 0 && player.getCostBasis(drug) < getPriceOfDrug(drug)">
@@ -54,14 +54,15 @@
         <hr />
         <v-container>
             <v-row>
-                <v-col>
+                <v-col cols="12" xs="6" sm="6" md="3" lg="3" xl="3" xxl="3">
                     <CostBasis />
                 </v-col>
-                <v-col><v-btn color="primary" width="100%" :disabled="selectedDrug === '' || numberOfUnits === 0"
-                        @click="sell">Sell</v-btn></v-col>
-                <v-col><v-btn color="primary" width="100%" @click="cancel"
-                        :disabled="selectedDrug === ''">Cancel</v-btn></v-col>
-                <v-col><v-btn color="primary" width="100%" @click="gotoMainMenu">Main Menu</v-btn></v-col>
+                <v-col cols="12" xs="6" sm="6" md="3" lg="3" xl="3" xxl="3"><v-btn color="primary" width="100%"
+                        :disabled="selectedDrug === '' || numberOfUnits === 0" @click="sell">Sell</v-btn></v-col>
+                <v-col cols="12" xs="6" sm="6" md="3" lg="3" xl="3" xxl="3"><v-btn color="primary" width="100%"
+                        @click="cancel" :disabled="selectedDrug === ''">Cancel</v-btn></v-col>
+                <v-col cols="12" xs="6" sm="6" md="3" lg="3" xl="3" xxl="3"><v-btn color="primary" width="100%"
+                        @click="gotoMainMenu">Main Menu</v-btn></v-col>
             </v-row>
         </v-container>
         <v-dialog v-model="dialog" width="auto">
